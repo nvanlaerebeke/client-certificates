@@ -1,0 +1,5 @@
+*.crt
+*.pfx
+*.key
+*.csr
+*.srl
