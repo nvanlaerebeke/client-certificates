@@ -1,0 +1,21 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: pxe # Change this
+  namespace: default # Change this
+spec:
+  entryPoints:
+    - websecure # Change this?
+  routes:
+    - kind: Rule
+      match: "Host(`pxe.crazyzone.be`)" # Change this
+      services:
+        # You can use this service for testing. It will respond with a '418 I'm a teapot'
+        - kind: TraefikService
+          name: noop@internal
+  tls: # Not merged with static configuration
+    # certResolver: letsencrypt # You can add this later
+    options:
+      # Change these. Must match the metadata from step 2
+      name: client-cert
+      namespace: default
