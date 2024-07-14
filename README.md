@@ -68,3 +68,5 @@ Now create a new client certificate by running:
 ```console
 make client NAME=<myname>
 ```
+
+Note: Existing data is saved in bitwarden and/or keypass
